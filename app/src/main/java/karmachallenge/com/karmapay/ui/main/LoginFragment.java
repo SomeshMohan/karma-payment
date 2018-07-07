@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseUser;
 
+import karmachallenge.com.karmapay.LandingPage;
 import karmachallenge.com.karmapay.MainActivity;
 import karmachallenge.com.karmapay.R;
 import karmachallenge.com.karmapay.RegisterActivity;
@@ -117,7 +118,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     }
 
     private void updateUI(FirebaseUser user) {
-
+        Intent landingPageIntent = new Intent(getActivity(), LandingPage.class);
+        startActivity(landingPageIntent);
     }
 
     public void showProgressDialog(String message) {

@@ -1,10 +1,14 @@
 package karmachallenge.com.karmapay.ui.register;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private String uid;
     private String firstName;
     private String lastName;
     private String contact;
+
+    public User() {}
 
     public User(String uid, String firstName, String lastName, String contact) {
         this.uid = uid;

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="left|start"
+    android:layout_marginTop="@dimen/text_size_extra_large"
+    android:paddingLeft="@dimen/margin_large"
+    android:background="@color/colorPrimaryDark">
+
+    <ImageView
+        android:id="@+id/profile_imageview"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_large"
+        android:src="@drawable/ic_person"/>
+
+    <TextView
+        android:id="@+id/name_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/colorWhite"
+        android:text="---------------"/>
+
+    <TextView
+        android:id="@+id/email_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_marginTop="@dimen/margin_small"
+        android:textColor="@color/colorWhite"
+        android:text="---------"
+        android:layout_marginBottom="@dimen/margin_large"/>
+
+</LinearLayout>
