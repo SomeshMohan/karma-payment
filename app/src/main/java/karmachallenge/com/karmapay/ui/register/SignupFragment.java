@@ -17,7 +17,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import karmachallenge.com.karmapay.MainActivity;
 import karmachallenge.com.karmapay.R;
 import karmachallenge.com.karmapay.RegisterActivity;
 
@@ -28,12 +27,18 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
     private EditText userNameEditText;
     private EditText passwordEditText;
     private EditText confirmPasswordEditText;
+    private EditText firstNameEditText;
+    private EditText lastNameEditText;
+    private EditText phoneNumberEditText;
     private Button registerButton;
     private String userName;
     private String password;
     private String confirmPassword;
     private FirebaseAuth mAuth;
     private String userId;
+    private String firstName;
+    private String lastName;
+    private String contactNumber;
 
     public static SignupFragment newInstance() {
         return new SignupFragment();
@@ -67,6 +72,9 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
         passwordEditText = view.findViewById(R.id.password_edittext);
         confirmPasswordEditText = view.findViewById(R.id.confirm_password_edittext);
         registerButton = view.findViewById(R.id.firebase_register_button);
+        firstNameEditText = view.findViewById(R.id.first_name_edittext);
+        lastNameEditText = view.findViewById(R.id.last_name_edittext);
+        phoneNumberEditText = view.findViewById(R.id.phone_number_edittext);
     }
 
     private void bindListeners() {
@@ -110,7 +118,19 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
         userName = userNameEditText.getText().toString();
         password = passwordEditText.getText().toString();
         confirmPassword = confirmPasswordEditText.getText().toString();
-        if(TextUtils.isEmpty(userName)) {
+        firstName = firstNameEditText.getText().toString();
+        lastName = lastNameEditText.getText().toString();
+        contactNumber = phoneNumberEditText.getText().toString();
+        if(TextUtils.isEmpty(firstName)) {
+            isValid = false;
+            firstNameEditText.setError("Required");
+        } else if(TextUtils.isEmpty(lastName)) {
+            isValid = false;
+            lastNameEditText.setError("Required");
+        } else if(TextUtils.isEmpty(contactNumber)) {
+            isValid = false;
+            phoneNumberEditText.setError("Required");
+        } else if(TextUtils.isEmpty(userName)) {
             isValid = false;
             userNameEditText.setError("Required");
         } else if(TextUtils.isEmpty(password)) {

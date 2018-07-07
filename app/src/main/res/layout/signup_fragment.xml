@@ -26,6 +26,49 @@
                 android:text="Register"/>
 
             <EditText
+                android:id="@+id/first_name_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_height_normal"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:hint="First Name"
+                android:background="@drawable/rectangle_bg"
+                />
+
+            <EditText
+                android:id="@+id/last_name_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_height_normal"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:hint="Last Name"
+                android:background="@drawable/rectangle_bg"
+                />
+
+            <EditText
+                android:id="@+id/phone_number_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_height_normal"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:maxLines="1"
+                android:inputType="number"
+                android:singleLine="true"
+                android:hint="Contact"
+                android:background="@drawable/rectangle_bg"
+                />
+
+            <EditText
                 android:id="@+id/username_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/view_height_normal"
@@ -37,8 +80,6 @@
                 android:singleLine="true"
                 android:hint="Email"
                 android:background="@drawable/rectangle_bg"
-                android:drawableLeft="@drawable/ic_username"
-                android:drawablePadding="@dimen/margin_small"
                 />
 
             <EditText
@@ -51,8 +92,6 @@
                 android:layout_marginBottom="@dimen/margin_small"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:background="@drawable/rectangle_bg"
-                android:drawableLeft="@drawable/ic_password"
                 android:drawablePadding="@dimen/margin_small"
                 android:inputType="textPassword"
                 android:hint="Password"/>
@@ -68,8 +107,6 @@
                 android:maxLines="1"
                 android:singleLine="true"
                 android:background="@drawable/rectangle_bg"
-                android:drawableLeft="@drawable/ic_password"
-                android:drawablePadding="@dimen/margin_small"
                 android:inputType="textPassword"
                 android:hint="Confirm Password"/>
 
