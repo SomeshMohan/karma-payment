@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import karmachallenge.com.karmapay.R;
 import karmachallenge.com.karmapay.RegisterActivity;
@@ -39,6 +41,7 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
     private String firstName;
     private String lastName;
     private String contactNumber;
+    private FirebaseFirestore mFirestore;
 
     public static SignupFragment newInstance() {
         return new SignupFragment();
@@ -57,6 +60,7 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
 
     private void configureFirebaseClient() {
         mAuth = FirebaseAuth.getInstance();
+        mFirestore = FirebaseFirestore.getInstance();
     }
 
 
@@ -99,7 +103,9 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isComplete()) {
                             if(task.isSuccessful()) {
+                                CollectionReference reference = mFirestore.collection("users");
                                 userId = mAuth.getCurrentUser().getUid();
+                                reference.add(new User(userId, firstName, lastName, contactNumber));
                                 showToast("Success");
                             } else {
                                 try {
