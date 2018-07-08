@@ -50,6 +50,8 @@ public class LandingPage extends AppCompatActivity {
         viewModel.getUser().observe(this, new Observer<User>() {
             @Override
             public void onChanged(@Nullable User user) {
+                nameTextView = navigationView.findViewById(R.id.name_textview);
+                emailTextView = navigationView.findViewById(R.id.email_textview);
                 nameTextView.setText(user.getFirstName() +" " +user.getLastName());
                 emailTextView.setText(user.getContact());
             }
